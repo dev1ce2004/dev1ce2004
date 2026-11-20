@@ -11,4 +11,4 @@
 
 ### — elsewhere
 
-[GitHub](https://github.com/dev1ce2004) · [University email](mailto:tsolic01@fesb.hr) · [Personal email](mailto:tinsolic@gmail.com) · [MCDM Arena](mailto:mcdm.arena@gmail.com)
+[University email](mailto:tsolic01@fesb.hr) · [Personal email](mailto:tinsolic@gmail.com) · [MCDM Arena](mailto:mcdm.arena@gmail.com)
