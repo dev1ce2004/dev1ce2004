@@ -1,16 +1,17 @@
-## Hi there 👋
+# dev1ce — Tin Šolić
 
-<!--
-**dev1ce2004/dev1ce2004** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+<p align="center">
+  <img src="assets/airplane-dev1ce.jpg" alt="Airplane photograph with dev1ce wordmark" width="100%">
+</p>
+<p align="center">
+  <img src="assets/mcdm-arena.svg" alt="MCDM Arena — decision intelligence and agent simulation" width="100%">
+</p>
+<p align="center">
+  <a href="https://music.youtube.com/playlist?list=PLiWZPK0CLhRHQuAbRyUZhf0jjJZUrZ5Td">
+    <img src="assets/youtube-visualizer.gif" alt="Animated music visualizer — open Tin's YouTube Music playlist" width="100%">
+  </a>
+</p>
 
-Here are some ideas to get you started:
+### — elsewhere
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+[GitHub](https://github.com/dev1ce2004) · [University email](mailto:tsolic01@fesb.hr) · [Personal email](mailto:tinsolic@gmail.com) · [MCDM Arena](mailto:mcdm.arena@gmail.com)
