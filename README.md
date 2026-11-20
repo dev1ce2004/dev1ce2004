@@ -1,4 +1,4 @@
-# dev1ce — Tin Šolić
+# dev1ce
 
 <p align="center">
   <img src="assets/airplane-dev1ce.jpg" alt="Airplane photograph with dev1ce wordmark" width="100%">
