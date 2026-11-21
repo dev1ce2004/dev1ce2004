@@ -13,7 +13,7 @@
 
 <p align="center">
   <a href="https://music.youtube.com/playlist?list=PLiWZPK0CLhRHQuAbRyUZhf0jjJZUrZ5Td">
-    <img src="assets/now-playing.svg?v=25a9dfdb" alt="Top five tracks from Tin's YouTube Music playlist" width="100%">
+    <img src="assets/now-playing.svg?v=de5072b5" alt="Top five tracks from Tin's YouTube Music playlist" width="100%">
   </a>
 </p>
 
