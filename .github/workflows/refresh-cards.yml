@@ -3,7 +3,7 @@ name: refresh-cards
 # Redraws assets/now-playing.svg (YouTube Music playlist, top 5) and assets/stats.svg (GitHub activity).
 on:
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "0 13 * * *"  # 14:00 Split (CET); 15:00 in summer (CEST)
   workflow_dispatch:
 
 permissions:
