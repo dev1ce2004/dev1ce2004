@@ -7,7 +7,7 @@ Music: first five tracks of the public YouTube Music playlist (reorder the playl
 Stats: GitHub GraphQL, needs GITHUB_TOKEN (or GH_TOKEN) in the environment.
 SVGs are shown through <img>, so photos and covers are inlined as data URIs and only system fonts are used.
 """
-import base64, io, json, os, re, sys, urllib.request
+import base64, hashlib, io, json, os, re, sys, urllib.request
 import xml.etree.ElementTree as ET
 from datetime import date, timedelta
 from html import escape
@@ -87,20 +87,6 @@ def hero():
 <text x="52" y="520" fill="{CREAM}" fill-opacity=".78" font-family="{MONO}" font-size="13" letter-spacing="4">TIN ŠOLIĆ — SOFTWARE, MOSTLY · SPLIT, HR</text>
 <text x="1152" y="520" text-anchor="end" fill="{BRASS}" font-family="{MONO}" font-size="12" letter-spacing="3">UNTITLED (AIRPLANE)</text>
 </g>
-</svg>""")
-
-
-# ---------------------------------------------------------------- statement
-def statement():
-    W, H = 1200, 132
-    write("statement.svg", f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}">
-<title>Statement: dev1ce builds decision engines and small games. Computer science at FESB, Split.</title>
-<defs>{GRAIN}</defs>
-<rect width="{W}" height="{H}" rx="14" fill="{BG}"/><rect width="{W}" height="{H}" rx="14" filter="url(#grain)" opacity=".08"/>
-<rect x="32" y="30" width="3" height="72" fill="{OX}"/>
-<text x="56" y="52" fill="{BRASS}" font-family="{MONO}" font-size="12" letter-spacing="4">ARTIST STATEMENT</text>
-<text x="56" y="84" fill="{CREAM}" font-family="{SERIF}" font-style="italic" font-size="25">Builds decision engines and small games. Computer science at FESB, Split.</text>
-<text x="56" y="110" fill="{DIM}" font-family="{MONO}" font-size="12" letter-spacing="3">MEDIUM — PYTHON · TYPESCRIPT · C · C++ · SDL3 · PYSC2</text>
 </svg>""")
 
 
@@ -293,7 +279,20 @@ def stats():
     print("stats:", cal["totalContributions"], cur, longest, top)
 
 
+def stamp_readme():
+    """Append ?v=<content hash> to each card URL so browsers and GitHub's cache fetch new versions."""
+    path = os.path.join(ROOT, "README.md")
+    md = open(path, encoding="utf-8").read()
+    def sub(m):
+        f = os.path.join(A, m.group(1))
+        v = hashlib.sha1(open(f, "rb").read()).hexdigest()[:8] if os.path.exists(f) else None
+        return f'assets/{m.group(1)}?v={v}"' if v else m.group(0)
+    new = re.sub(r'assets/([\w.-]+\.svg)(?:\?v=\w+)?"', sub, md)
+    if new != md:
+        open(path, "w", encoding="utf-8", newline="\n").write(new)
+
+
 if __name__ == "__main__":
     if sys.argv[1:] != ["live"]:
-        hero(); statement(); labels()
-    music(); stats()
+        hero(); labels()
+    music(); stats(); stamp_readme()
