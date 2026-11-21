@@ -12,8 +12,12 @@
 </p>
 
 <p align="center">
+  <img src="assets/stats.svg" alt="GitHub activity: contributions, streaks and languages over the last year" width="100%">
+</p>
+
+<p align="center">
   <a href="https://music.youtube.com/playlist?list=PLiWZPK0CLhRHQuAbRyUZhf0jjJZUrZ5Td">
-    <img src="assets/now-playing.svg" alt="Music card — open Tin's YouTube Music playlist" width="100%">
+    <img src="assets/now-playing.svg" alt="Top five tracks from Tin's YouTube Music playlist" width="100%">
   </a>
 </p>
 

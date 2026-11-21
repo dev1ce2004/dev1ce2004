@@ -1,22 +1,20 @@
-name: now-playing
+name: refresh-cards
 
-# Redraws assets/now-playing.svg from Last.fm.
-# Dormant until the repo variable LASTFM_USER and secret LASTFM_API_KEY exist.
+# Redraws assets/now-playing.svg (YouTube Music playlist, top 5) and assets/stats.svg (GitHub activity).
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "17 */6 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: now-playing
+  group: refresh-cards
   cancel-in-progress: true
 
 jobs:
   render:
-    if: vars.LASTFM_USER != ''
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,15 +22,14 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pillow==10.4.0
-      - run: python scripts/build.py music
+      - run: python scripts/build.py live
         env:
-          LASTFM_USER: ${{ vars.LASTFM_USER }}
-          LASTFM_API_KEY: ${{ secrets.LASTFM_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit if changed
         run: |
-          git diff --quiet assets/now-playing.svg && exit 0
+          git diff --quiet assets/ && exit 0
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/now-playing.svg
-          git commit -m "now playing"
+          git add assets/now-playing.svg assets/stats.svg
+          git commit -m "refresh cards"
           git push
