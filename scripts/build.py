@@ -1,8 +1,8 @@
 """Render the profile README cards (Hotel noir).
 
     python scripts/build.py          # every card
-    python scripts/build.py live     # music + stats only (used by the workflow)
-
+    python scripts/build.py live     # music + stats (workflow, 14:00)
+    python scripts/build.py music    # music only (workflow, 00:00)
 Music: first five tracks of the public YouTube Music playlist (reorder the playlist to change them).
 Stats: GitHub GraphQL, needs GITHUB_TOKEN (or GH_TOKEN) in the environment.
 SVGs are shown through <img>, so photos and covers are inlined as data URIs and only system fonts are used.
@@ -293,6 +293,10 @@ def stamp_readme():
 
 
 if __name__ == "__main__":
-    if sys.argv[1:] != ["live"]:
+    mode = sys.argv[1] if len(sys.argv) > 1 else "all"
+    if mode == "all":
         hero(); labels()
-    music(); stats(); stamp_readme()
+    music()
+    if mode != "music":
+        stats()
+    stamp_readme()

@@ -1,9 +1,11 @@
 name: refresh-cards
 
-# Redraws assets/now-playing.svg (YouTube Music playlist, top 5) and assets/stats.svg (GitHub activity).
+# Songs (assets/now-playing.svg) at 00:00 and 14:00 Split time; stats (assets/stats.svg) daily at 14:00.
+# Times are CET; GitHub cron is UTC with no daylight saving, so add an hour in summer.
 on:
   schedule:
-    - cron: "0 13 * * *"  # 14:00 Split (CET); 15:00 in summer (CEST)
+    - cron: "0 23 * * *"  # 00:00 Split: songs only
+    - cron: "0 13 * * *"  # 14:00 Split: songs + stats
   workflow_dispatch:
 
 permissions:
@@ -22,7 +24,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pillow==10.4.0
-      - run: python scripts/build.py live
+      - run: python scripts/build.py ${{ github.event.schedule == '0 23 * * *' && 'music' || 'live' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit if changed
