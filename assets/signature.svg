@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="110" viewBox="0 0 520 110">
-<rect width="520" height="110" rx="10" fill="#0d0b0a"/>
-<path d="M20 18V92M20 18H44M20 92H44" stroke="#b4433a" stroke-width="2"/>
-<text x="64" y="58" fill="#e8d8c4" font-family="Georgia,serif" font-size="42" font-style="italic">dev1ce</text>
-<text x="66" y="83" fill="#a99d90" font-family="Arial,sans-serif" font-size="11" letter-spacing="5">TIN ŠOLIĆ  /  SPLIT, HR</text>
-<path d="M365 55H490" stroke="#e8a35c" stroke-width="1" opacity=".8"/>
-<circle cx="490" cy="55" r="3" fill="#e8a35c"/>
-</svg>
