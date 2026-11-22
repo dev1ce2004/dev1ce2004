@@ -8,12 +8,12 @@
 </p>
 
 <p align="center">
-  <img src="assets/stats.svg?v=b17c7e31" alt="GitHub activity: contributions, streaks and languages over the last year" width="100%">
+  <img src="assets/stats.svg?v=ddab2ff3" alt="GitHub activity: contributions, streaks and languages over the last year" width="100%">
 </p>
 
 <p align="center">
   <a href="https://music.youtube.com/playlist?list=PLiWZPK0CLhRHQuAbRyUZhf0jjJZUrZ5Td">
-    <img src="assets/now-playing.svg?v=de5072b5" alt="Top five tracks from Tin's YouTube Music playlist" width="100%">
+    <img src="assets/now-playing.svg?v=e6c444ee" alt="Top five tracks from Tin's YouTube Music playlist" width="100%">
   </a>
 </p>
 
