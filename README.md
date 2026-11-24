@@ -8,7 +8,7 @@
 </p>
 
 <p align="center">
-  <img src="assets/stats.svg?v=ddab2ff3" alt="GitHub activity: contributions, streaks and languages over the last year" width="100%">
+  <img src="assets/stats.svg?v=e14d5f72" alt="GitHub activity: contributions, streaks and languages over the last year" width="100%">
 </p>
 
 <p align="center">
